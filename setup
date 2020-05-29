@@ -7,14 +7,25 @@ echo "INSTALLING BREW PACKAGES"
 brew install git git-flow elixir neovim go python pipenv
 pip3 install jupyterlab
 echo "INSTALLING BREW CASKS"
-brew cask install docker azure-data-studio visual-studio-code notion postman rectangle
+brew cask install docker azure-data-studio visual-studio-code notion postman rectangle iterm2
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
 curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Italic.ttf'
 curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Bold.ttf'
 curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Regular.ttf'
 cd -
+# RESTORE VSCODE CONFIG
+cd ~/Library/Application\ Support/Code/User
 
+# RESTORE NVIM CONFIG
+cd ~/.config/nvim
+
+cd -
+# RESTORE ITERM CONFIG
+
+# ZSH
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# CREATE AND SETUP GIT KEY
 
 echo "Type the name you want to associate to your git user"
 read gitname
