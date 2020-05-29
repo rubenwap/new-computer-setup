@@ -1,0 +1,24 @@
+#!/bin/bash
+echo "INSTALLING XCODE BUILD TOOLS"
+xcode-select --install
+echo "INSTALLING BREW..."
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo "INSTALLING BREW PACKAGES"
+brew install git git-flow elixir neovim go python pipenv
+pip3 install jupyterlab
+echo "INSTALLING BREW CASKS"
+brew cask install docker azure-data-studio visual-studio-code notion postman rectangle
+echo "INSTALLING FIRA ISCRIPT FONT"
+cd ~/Library/Fonts
+curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Italic.ttf'
+curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Bold.ttf'
+curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Regular.ttf'
+cd -
+
+
+echo "Type the name you want to associate to your git user"
+read gitname
+git config user.name $gitname
+echo "Type the email you want to associate to your git user"
+read gitemail
+git config user.email $gitemail

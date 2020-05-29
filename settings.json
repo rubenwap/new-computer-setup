@@ -1,0 +1,21 @@
+{
+    "typescript.check.tscVersion": false,
+    "window.zoomLevel": 0,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "workbench.colorTheme": "Community Material Theme Darker",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "\"Fira Code iScript\"",
+    "editor.minimap.enabled": true,
+    "editor.renderControlCharacters": true,
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
+    "files.autoSave": "afterDelay",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true
+}
