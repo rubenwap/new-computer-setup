@@ -4,7 +4,7 @@ xcode-select --install
 echo "INSTALLING BREW..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo "INSTALLING BREW PACKAGES"
-brew install git git-flow elixir neovim go python pipenv
+brew install git git-flow elixir neovim go python pipenv tree
 pip3 install jupyterlab
 echo "INSTALLING BREW CASKS"
 brew cask install docker azure-data-studio visual-studio-code notion postman rectangle iterm2
@@ -16,15 +16,23 @@ curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScri
 cd -
 # RESTORE VSCODE CONFIG
 cd ~/Library/Application\ Support/Code/User
-
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/settings.json'
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/keybinding.json'
+mkdir snippets && cd snippets
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/snippets/go.json'
 # RESTORE NVIM CONFIG
 cd ~/.config/nvim
-
-cd -
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/init.vim'
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/local_init.vim'
+cd ~
 # RESTORE ITERM CONFIG
-
+cd ~/Library/Application\ Support/iterm2/DynamicProfiles
+curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/iterm2.json'
 # ZSH
+cd ~
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+source ~/.zshrc
 # CREATE AND SETUP GIT KEY
 
 echo "Type the name you want to associate to your git user"
