@@ -16,23 +16,24 @@ curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScri
 cd -
 echo "RESTORE VSCODE CONFIG"
 cd ~/Library/Application\ Support/Code/User
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/settings.json'
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/keybinding.json'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/settings.json'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/keybindings.json'
 mkdir snippets && cd snippets
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/snippets/go.json'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/snippets/go.json'
 echo "RESTORE NVIM CONFIG"
 cd ~/.config/nvim
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/init.vim'
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/local_init.vim'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/init.vim'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/local_init.vim'
 cd ~
 echo "RESTORE ITERM CONFIG"
 cd ~/Library/Application\ Support/iterm2/DynamicProfiles
-curl -O 'https://github.com/rubenwap/new-computer-setup/blob/master/iterm2.json'
+curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/iterm2.json'
 echo "OH MY ZSH AND PLUGINS"
 cd ~
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source ~/.zshrc
 brew install antigen
+source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
