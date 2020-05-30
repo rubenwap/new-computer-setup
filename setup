@@ -26,14 +26,15 @@ curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/i
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/local_init.vim'
 cd ~
 echo "RESTORE ITERM CONFIG"
-cd ~/Library/Application\ Support/iterm2/DynamicProfiles
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/com.googlecode.iterm2.plist'
+defaults read com.googlecode.iterm2
+rm com.googlecode.iterm2.plist
 echo "OH MY ZSH AND PLUGINS"
 cd ~
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-source ~/.zshrc
 brew install antigen
-source /usr/local/share/antigen/antigen.zsh
+sed -i '1s/^/<source /usr/local/share/antigen/antigen.zsh> \n/' ~/.zshrc
+source ~/.zshrc
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
