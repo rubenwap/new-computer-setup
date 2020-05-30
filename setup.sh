@@ -55,6 +55,7 @@ echo "Type the email you want to associate to your git user"
 read gitemail
 git config user.email $gitemail
 ssh-keygen -t rsa -b 4096 -C $gitemail
+ssh-add -K ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | pbcopy
 echo "YOUR PUBLIC KEY HAS BEEN COPIED. PASTE IT IN GITHUB/GITLAB/BITBUCKET TO COMPLETE THE OPERATION"
 
