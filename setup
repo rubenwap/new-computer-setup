@@ -10,24 +10,24 @@ echo "INSTALLING BREW CASKS"
 brew cask install docker azure-data-studio visual-studio-code notion postman rectangle iterm2
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
-curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Italic.ttf'
-curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Bold.ttf'
-curl -O 'https://github.com/kencrocken/FiraCodeiScript/blob/master/FiraCodeiScript-Regular.ttf'
+curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
+curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Bold.ttf'
+curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Italic.ttf'
 cd -
 echo "RESTORE VSCODE CONFIG"
 cd ~/Library/Application\ Support/Code/User
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/settings.json'
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/keybindings.json'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/settings.json'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/keybindings.json'
 mkdir snippets && cd snippets
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/snippets/go.json'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/snippets/go.json'
 echo "RESTORE NVIM CONFIG"
 cd ~/.config/nvim
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/init.vim'
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/local_init.vim'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/init.vim'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/local_init.vim'
 cd ~
 echo "RESTORE ITERM CONFIG"
 cd ~/Library/Application\ Support/iterm2/DynamicProfiles
-curl -O 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/iterm2.json'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/iterm2.json'
 echo "OH MY ZSH AND PLUGINS"
 cd ~
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
