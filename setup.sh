@@ -4,10 +4,12 @@ xcode-select --install
 echo "INSTALLING BREW..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo "INSTALLING BREW PACKAGES"
-brew install git git-flow elixir neovim go python pipenv tree
+brew install git git-flow elixir neovim go python pipenv tree azure-cli
 pip3 install jupyterlab
 echo "INSTALLING BREW CASKS"
-brew cask install docker dbeaver-community azure-data-studio visual-studio-code notion postman rectangle iterm2
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
+brew cask install docker dbeaver-community visual-studio-code notion postman rectangle iterm2
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
@@ -33,7 +35,8 @@ echo "OH MY ZSH AND PLUGINS"
 cd ~
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew install antigen
-sed -i '1s/^/<source /usr/local/share/antigen/antigen.zsh> \n/' ~/.zshrc
+sed -i '.bak' '1s|^|source /usr/local/share/antigen/antigen.zsh \
+|' ~/.zshrc
 source ~/.zshrc
 antigen use oh-my-zsh
 antigen bundle git
