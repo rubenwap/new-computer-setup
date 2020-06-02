@@ -7,7 +7,7 @@ echo "INSTALLING BREW PACKAGES"
 brew install git git-flow elixir neovim go python pipenv tree
 pip3 install jupyterlab
 echo "INSTALLING BREW CASKS"
-brew cask install docker azure-data-studio visual-studio-code notion postman rectangle iterm2
+brew cask install docker dbeaver-community azure-data-studio visual-studio-code notion postman rectangle iterm2
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
