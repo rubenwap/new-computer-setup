@@ -29,6 +29,8 @@ curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/l
 cd ~
 echo "RESTORE ITERM CONFIG"
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/com.googlecode.iterm2.plist'
+open -a iterm
+osascript -e 'quit app "iterm"'
 defaults read com.googlecode.iterm2
 rm com.googlecode.iterm2.plist
 echo "OH MY ZSH AND PLUGINS"
