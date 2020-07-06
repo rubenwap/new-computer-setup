@@ -24,8 +24,8 @@ mkdir snippets && cd snippets
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/snippets/go.json'
 echo "RESTORE NVIM CONFIG"
 cd ~/.config/nvim
-curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/init.vim'
-curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/local_init.vim'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/init.vim'
+curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/local_init.vim'
 cd ~
 echo "RESTORE ITERM CONFIG"
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/com.googlecode.iterm2.plist'
