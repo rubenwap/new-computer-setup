@@ -4,8 +4,8 @@ xcode-select --install
 echo "INSTALLING BREW..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo "INSTALLING BREW PACKAGES"
-brew install git git-flow elixir neovim go python pipenv tree azure-cli
-pip3 install jupyterlab
+brew install git git-flow elixir neovim go python pipenv tree htop
+pip3 install jupyterlab neovim
 echo "INSTALLING BREW CASKS"
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
@@ -19,9 +19,6 @@ cd -
 echo "RESTORE VSCODE CONFIG"
 cd ~/Library/Application\ Support/Code/User
 curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/settings.json'
-curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/keybindings.json'
-mkdir snippets && cd snippets
-curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/snippets/go.json'
 echo "RESTORE NVIM CONFIG"
 cd ~/.config/nvim
 curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/init.vim'
