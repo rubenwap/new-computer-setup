@@ -1,15 +1,20 @@
 #!/bin/bash
+echo -n "Install also the non dev casks (y/n)? "
+read answer
 echo "INSTALLING XCODE BUILD TOOLS"
 xcode-select --install
 echo "INSTALLING BREW..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo "INSTALLING BREW PACKAGES"
-brew install git git-flow elixir neovim go python pipenv tree htop
+brew install git git-flow elixir neovim go python pipenv tree htop mas
 pip3 install jupyterlab neovim
 echo "INSTALLING BREW CASKS"
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
-brew cask install docker dbeaver-community visual-studio-code notion postman rectangle iterm2
+brew cask install docker dbeaver-community visual-studio-code postman rectangle iterm2
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    brew cask install appcleaner calibre keepassxc notion postgres spotify flux
+    mas install 414030210 682658836
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
