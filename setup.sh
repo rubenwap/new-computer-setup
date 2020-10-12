@@ -14,16 +14,13 @@ brew cask install adoptopenjdk8
 brew cask install docker dbeaver-community visual-studio-code postman rectangle iterm2
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     brew cask install appcleaner calibre keepassxc notion postgres spotify flux
-    mas install 414030210 682658836
+    mas install 414030210 682658836 1440147259 # limechat, garageband, adguard
 echo "INSTALLING FIRA ISCRIPT FONT"
 cd ~/Library/Fonts
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Bold.ttf'
 curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Italic.ttf'
 cd -
-echo "RESTORE VSCODE CONFIG"
-cd ~/Library/Application\ Support/Code/User
-curl -LO 'https://raw.githubusercontent.com/rubenwap/new-computer-setup/master/settings.json'
 echo "RESTORE NVIM CONFIG"
 cd ~/.config/nvim
 curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/init.vim'
@@ -57,10 +54,10 @@ antigen apply
 echo "GIT SETUP"
 echo "Type the name you want to associate to your git user"
 read gitname
-git config user.name $gitname
+git config --global user.name $gitname
 echo "Type the email you want to associate to your git user"
 read gitemail
-git config user.email $gitemail
+git config --global user.email $gitemail
 ssh-keygen -t rsa -b 4096 -C $gitemail
 ssh-add -K ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | pbcopy
