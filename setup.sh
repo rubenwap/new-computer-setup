@@ -10,18 +10,14 @@ brew install git git-flow elixir neovim go python pipenv tree htop mas
 pip3 install jupyterlab neovim
 echo "INSTALLING BREW CASKS"
 brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
-brew cask install docker dbeaver-community visual-studio-code postman rectangle iterm2
-if [ "$answer" != "${answer#[Yy]}" ] ;then
+brew tap homebrew/cask-fonts
+brew cask install adoptopenjdk8 font-jetbrains-mono docker dbeaver-community visual-studio-code postman rectangle iterm2
+if [[ $answer == "Y" || $answer == "y" ]]; then
     brew cask install appcleaner calibre keepassxc notion postgres spotify flux
     mas install 414030210 682658836 1440147259 # limechat, garageband, adguard
-echo "INSTALLING FIRA ISCRIPT FONT"
-cd ~/Library/Fonts
-curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Regular.ttf'
-curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Bold.ttf'
-curl -LO 'https://github.com/kencrocken/FiraCodeiScript/raw/master/FiraCodeiScript-Italic.ttf'
-cd -
+fi
 echo "RESTORE NVIM CONFIG"
+mkdir -p ~/.config/nvim
 cd ~/.config/nvim
 curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/init.vim'
 curl -LO 'https://raw.githubusercontent.com/rubenwap/neovim-config/master/local_init.vim'
@@ -38,19 +34,21 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 brew install antigen
 sed -i '.bak' '1s|^|source /usr/local/share/antigen/antigen.zsh \
 |' ~/.zshrc
+sed -i '.bak' '2s|^|antigen use oh-my-zsh \
+|' ~/.zshrc
+sed -i '.bak' '3s|^|antigen bundle git \
+|' ~/.zshrc
+sed -i '.bak' '4s|^|antigen bundle command-not-found \
+|' ~/.zshrc
+sed -i '.bak' '5s|^|antigen bundle zsh-users/zsh-syntax-highlighting \
+|' ~/.zshrc
+sed -i '.bak' '6s|^|antigen bundle git-flow \
+|' ~/.zshrc
+sed -i '.bak' '7s|^|antigen theme kolo \
+|' ~/.zshrc
+sed -i '.bak' '8s|^|antigen apply \
+|' ~/.zshrc
 source ~/.zshrc
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle pip
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle docker
-antigen bundle git-flow
-antigen bundle golang
-antigen bundle python
-antigen bundle vscode
-antigen theme kolo
-antigen apply
 echo "GIT SETUP"
 echo "Type the name you want to associate to your git user"
 read gitname
