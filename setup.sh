@@ -6,7 +6,7 @@ xcode-select --install
 echo "INSTALLING BREW..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo "INSTALLING BREW PACKAGES"
-brew install git git-flow elixir neovim go python pipenv tree htop mas
+brew install git git-flow elixir neovim go python pipenv tree htop mas hugo
 pip3 install jupyterlab neovim
 echo "INSTALLING BREW CASKS"
 brew tap AdoptOpenJDK/openjdk
@@ -14,7 +14,7 @@ brew tap homebrew/cask-fonts
 brew cask install adoptopenjdk8 font-jetbrains-mono docker dbeaver-community visual-studio-code postman rectangle iterm2
 if [[ $answer == "Y" || $answer == "y" ]]; then
     brew cask install appcleaner calibre keepassxc notion postgres spotify flux
-    mas install 414030210 682658836 1440147259 # limechat, garageband, adguard
+    mas install 414030210 682658836 1440147259 497799835 # limechat, garageband, adguard, xcode
 fi
 echo "RESTORE NVIM CONFIG"
 mkdir -p ~/.config/nvim
