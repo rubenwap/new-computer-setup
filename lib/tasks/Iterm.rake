@@ -8,7 +8,7 @@ namespace :iterm do
   end
 
   desc "Install Oh-My-Zsh"
-  task :brew do
+  task :ohmyzsh do
     destination = './lib/files/oh-my-zsh.sh'
     require 'open-uri'
     download = URI.open('https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh')
