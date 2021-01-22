@@ -19,7 +19,7 @@ namespace :iterm do
 
 antigenPlugins = %q{
 source /usr/local/share/antigen/antigen.zsh
-antigen theme kolo
+antigen theme romkatv/powerlevel10k
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
