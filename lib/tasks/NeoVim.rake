@@ -12,7 +12,7 @@ namespace :neovim do
 
 desc "Restore Neovim config"
 task :config do
-FileUtils.mkdir_p '/Users/ruben/.config/nvim'
+FileUtils.mkdir_p '/Users/#{%x[whoami].chomp}/.config/nvim'
 download('https://raw.githubusercontent.com/rubenwap/neovim-config/master/','init.vim', '/Users/ruben/.config/nvim')
 
 end

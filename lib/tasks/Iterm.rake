@@ -32,8 +32,8 @@ antigen apply
 
   desc "Antigen plugins"
   task :antigen do
-    rd = IO.read '/Users/ruben/.zshrc'
-    IO.write '/Users/ruben/.zshrc', antigenPlugins  + rd
+    rd = IO.read '/Users/#{%x[whoami].chomp}/.zshrc'
+    IO.write '/Users/#{%x[whoami].chomp}/.zshrc', antigenPlugins  + rd
     
   end
   
